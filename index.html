@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date - Your Names Here</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #faf9f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #6b5b73;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .date {
+            font-size: 2em;
+            color: #8b7355;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #6b5b73;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .location-details {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #6b5b73;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e8d5c4;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #8b7355;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background-color: #8b7355;
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #6b5b73;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-size: 1.1em;
+            color: #8b7355;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #faf9f7;
+            border-radius: 5px;
+        }
+
+        /* Decorative elements */
+        .ornament {
+            text-align: center;
+            font-size: 2em;
+            color: #e8d5c4;
+            margin: 30px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .date {
+                font-size: 1.5em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Harriet & Mark</h1>
+            <!-- <div class="ornament">♥</div> -->
+            <div class="date">May 30, 2026</div>
+            <p style="font-size: 1.2em; color: #8b7355;">Save the Date</p>
+        </header>
+
+        <div class="section">
+            <h2>Location</h2>
+            <div class="location-details">
+                <p><strong>Nottingham, UK</strong></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Let Us Know You're Coming!</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                While this isn't our official RSVP, we'd love to get an idea of who's planning to celebrate with us.
+            </p>
+            
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Your Name(s)</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance">Planning to Attend?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Please select...</option>
+                        <option value="yes">Yes, wouldn't miss it!</option>
+                        <option value="maybe">Maybe, will try my best</option>
+                        <option value="no">Unable to attend</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests in Your Party</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Please select...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6+">6 or more</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Questions or Notes (Optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Any dietary restrictions, questions, or special notes..."></textarea>
+                </div>
+
+                <button type="submit">Submit Response</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                Thank you for your response! We can't wait to celebrate with you.
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            <p>Formal invitations with additional details will be sent soon.</p>
+            <p>In the meantime, please save the date!</p>
+        </div>
+
+        <div class="footer">
+            <p>Questions? Contact us at: your.email@example.com</p>
+            <div class="ornament">♥ ♥ ♥</div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                attendance: document.getElementById('attendance').value,
+                guests: document.getElementById('guests').value,
+                notes: document.getElementById('notes').value,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Here you would normally send this data to a server
+            // For now, we'll just log it and show a success message
+            console.log('Form submission:', formData);
+            
+            // You can integrate with Google Forms, Formspree, or other services
+            // Example: window.location.href = `mailto:your.email@example.com?subject=Wedding RSVP&body=${JSON.stringify(formData)}`;
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
