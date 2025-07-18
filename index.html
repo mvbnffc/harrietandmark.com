@@ -218,22 +218,6 @@
                             marginwidth="0" 
                             title="Harriet & Mark - Save the Date">
                     </iframe>
-                    <script>
-                        var d=document,
-                            w="https://tally.so/widgets/embed.js",
-                            v=function(){
-                                "undefined"!=typeof Tally
-                                    ?Tally.loadEmbeds()
-                                    :d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){
-                                        e.src=e.dataset.tallySrc
-                                    }))
-                            };
-                        if("undefined"!=typeof Tally)v();
-                        else if(d.querySelector('script[src="'+w+'"]')==null){
-                            var s=d.createElement("script");
-                            s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
-                        }
-                    </script>
                 </div>
 
 
@@ -255,36 +239,20 @@
     </div>
 
     <script>
-        // Form submission handler
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                attendance: document.getElementById('attendance').value,
-                guests: document.getElementById('guests').value,
-                notes: document.getElementById('notes').value,
-                timestamp: new Date().toLocaleString()
+        var d=document,
+            w="https://tally.so/widgets/embed.js",
+            v=function(){
+                "undefined"!=typeof Tally
+                    ?Tally.loadEmbeds()
+                    :d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){
+                        e.src=e.dataset.tallySrc
+                    }))
             };
-            
-            // Here you would normally send this data to a server
-            // For now, we'll just log it and show a success message
-            console.log('Form submission:', formData);
-            
-            // You can integrate with Google Forms, Formspree, or other services
-            // Example: window.location.href = `mailto:your.email@example.com?subject=Wedding RSVP&body=${JSON.stringify(formData)}`;
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form after a delay
-            setTimeout(() => {
-                this.reset();
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
-        });
+        if("undefined"!=typeof Tally)v();
+        else if(d.querySelector('script[src="'+w+'"]')==null){
+            var s=d.createElement("script");
+            s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
+        }
     </script>
 </body>
 </html>
